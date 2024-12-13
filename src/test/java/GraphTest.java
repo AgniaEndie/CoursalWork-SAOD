@@ -76,7 +76,7 @@ public class GraphTest {
         //|
         //J
 
-        // Создание связей между узлами
+        // Create links between nodes
         nodeA.getChildren().add(nodeB);
         nodeA.getChildren().add(nodeT);
 

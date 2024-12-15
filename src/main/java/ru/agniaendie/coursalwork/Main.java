@@ -33,11 +33,19 @@ public class Main {
                             Main.drawCommandMessage(writer);
                             break;
                         case "2":
+                            //rw -> fix dead end
                             writer.write("Обход графа в ширину");
                             writer.newLine();
                             writer.flush();
                             Queue<Node> queue = new LinkedList<>();
-                            graphUtils.breadthFirstSearch(nodes.get(0), queue, true);
+                            Node currentNode = nodes.get(2);
+                            if (currentNode.getChildren().isEmpty()) {
+                                writer.write("Тупиковый элемент");
+                                writer.newLine();
+                                currentNode = nodes.get(0);
+                            }
+
+                            graphUtils.breadthFirstSearch(currentNode, queue, true);
                             writer.newLine();
                             writer.flush();
                             Main.drawCommandMessage(writer);

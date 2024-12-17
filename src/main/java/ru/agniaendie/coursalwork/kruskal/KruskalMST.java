@@ -7,7 +7,7 @@ import java.util.List;
 
 public class KruskalMST {
     public List<Edge> kruskal(List<Edge> edges, int numVertices) {
-        Collections.sort(edges, Comparator.comparingInt(e -> e.weight));
+        edges.sort(Comparator.comparingInt(e -> e.weight));
         DisjointSet ds = new DisjointSet(numVertices);
         List<Edge> mst = new ArrayList<>();
 

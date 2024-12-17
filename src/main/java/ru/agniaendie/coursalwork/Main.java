@@ -58,14 +58,27 @@ public class Main {
                             break;
                         case "4":
                             List<Edge> edges = new ArrayList<>();
-                            edges.add(new Edge(0, 1, 10));
-                            edges.add(new Edge(0, 2, 6));
-                            edges.add(new Edge(0, 3, 5));
-                            edges.add(new Edge(1, 3, 15));
-                            edges.add(new Edge(2, 3, 4));
+                            edges.add(new Edge(1, 2, 10));
+                            edges.add(new Edge(1, 3, 1));
+                            edges.add(new Edge(1, 4, 5));
+
+                            edges.add(new Edge(3, 1, 1));
+                            edges.add(new Edge(3, 4, 3));
+                            edges.add(new Edge(3, 5, 2));
+                            edges.add(new Edge(3, 6, 4));
+
+                            edges.add(new Edge(5, 3, 2));
+                            edges.add(new Edge(5, 6, 1));
+
+                            edges.add(new Edge(6, 5, 1));
+                            edges.add(new Edge(6, 4, 15));
+
+                            edges.add(new Edge(4, 3, 3));
+                            edges.add(new Edge(4, 1, 5));
+                            edges.add(new Edge(4, 6, 1));
 
                             KruskalMST kruskal = new KruskalMST();
-                            List<Edge> mst = kruskal.kruskal(edges, 4);
+                            List<Edge> mst = kruskal.kruskal(edges, edges.size());
 
                             writer.write("Рёбра минимального остовного дерева:");
                             writer.newLine();

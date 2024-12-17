@@ -9,9 +9,6 @@ public class GraphUtils {
     public void findMinimalCycle(Node node, List<Node> path, List<Node> minimalCycle, int minimalCycleCost, int minimalCycleLength) {
         if (path.contains(node)) {
             int cycleStartIndex = path.indexOf(node);
-            int cycleLength = path.size() - cycleStartIndex;
-
-
                 int currentCost = getCycleCost(path, cycleStartIndex);
                 if (currentCost < minimalCycleCost) {
                     minimalCycleCost = currentCost;

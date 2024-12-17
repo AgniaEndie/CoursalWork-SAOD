@@ -11,7 +11,7 @@ public class GraphUtils {
             int cycleStartIndex = path.indexOf(node);
             int cycleLength = path.size() - cycleStartIndex;
 
-            if (cycleLength > 2) {
+
                 int currentCost = getCycleCost(path, cycleStartIndex);
                 if (currentCost < minimalCycleCost) {
                     minimalCycleCost = currentCost;
@@ -24,7 +24,7 @@ public class GraphUtils {
                     minimalCycle.addAll(path.subList(cycleStartIndex, path.size()));
                     minimalCycle.add(minimalCycle.get(0));
                 }
-            }
+
             return;
         }
 
